@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Portfolio</h1>
+<ul>
+    {% for design in designs %}
+    <li>
+        <img src="{{ url_for('static', filename='uploads/' ~ design.filename) }}" alt="{{ design.description }}">
+        <p>{{ design.description }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
